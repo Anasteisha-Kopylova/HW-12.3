@@ -9,8 +9,15 @@ form.addEventListener("submit", function (event) {
   if (taskText === "") return;
 
   const li = document.createElement("li");
-  li.innerHTML = `<span>${taskText}</span> <button class="delete-btn">Delete</button>`;
+  li.textContent = taskText;
+
+  const deleteBtn = document.createElement("button");
+  deleteBtn.className = "delete-btn";
+  deleteBtn.textContent = "Delete";
+
+  li.appendChild(deleteBtn);
   taskList.appendChild(li);
+
   input.value = "";
 });
 
